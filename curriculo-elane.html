@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elane Costa de Freitas | Atendimento Publicitário</title>
+<meta name="description" content="Profissional de Atendimento Publicitário com 3 anos de experiência em mídia ON e OFF. Manaus, AM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #FAF9F6;
+    --surface: #FFFFFF;
+    --accent: #C4783B;
+    --accent-light: #F5EBE0;
+    --text: #1A1A1A;
+    --text-muted: #555;
+    --text-soft: #999;
+    --border: #E8E4DC;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* HEADER */
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 52px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .avatar-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .header-info { padding-top: 6px; }
+  .name {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .role {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+  .contacts a, .contacts span {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .contacts a:hover { color: var(--accent); }
+  .contacts svg {
+    width: 14px; height: 14px;
+    stroke: currentColor; fill: none;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+  .stat { background: var(--surface); padding: 22px 20px; text-align: center; }
+  .stat-value {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    gap: 56px;
+    align-items: start;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 44px; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--accent-light);
+  }
+
+  /* SOBRE */
+  .sobre p { font-size: 15px; color: var(--text-muted); line-height: 1.85; }
+  .sobre strong { color: var(--text); font-weight: 500; }
+
+  /* EXPERIÊNCIA */
+  .job { margin-bottom: 32px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+  }
+  .job-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .job-period {
+    font-size: 12px;
+    color: var(--text-soft);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .job-company {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .job-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+  .job-list {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .job-list li {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .job-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* SIDEBAR */
+  .sidebar-section { margin-bottom: 36px; }
+  .sidebar-section .section-label { margin-bottom: 14px; }
+
+  /* Skills */
+  .skill-list { list-style: none; }
+  .skill-item {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skill-item:last-child { border-bottom: none; }
+  .skill-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Ferramentas */
+  .tool-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tool-badge {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 5px 11px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  /* Formação */
+  .edu-item { margin-bottom: 14px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-title { font-size: 13px; color: var(--text); font-weight: 500; margin-bottom: 2px; }
+  .edu-sub { font-size: 12px; color: var(--text-soft); }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer p { font-size: 12px; color: var(--text-soft); }
+  .footer-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 680px) {
+    .header { grid-template-columns: 1fr; gap: 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .layout { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="avatar-placeholder">EF</div>
+    <div class="header-info">
+      <h1 class="name">Elane Costa de Freitas</h1>
+      <p class="role">Atendimento Publicitário</p>
+      <div class="contacts">
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Manaus, AM
+        </span>
+        <a href="tel:+5592992838820">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          (92) 99283-8820
+        </a>
+        <a href="mailto:elanefreitas14@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          elanefreitas14@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/elanefreitas" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/elanefreitas
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">3+</div>
+      <div class="stat-label">Anos de experiência</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">ON+OFF</div>
+      <div class="stat-label">Mídia integrada</div>
+    </div>
+  </div>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- PRINCIPAL -->
+    <main>
+
+      <!-- SOBRE -->
+      <section class="section sobre">
+        <p class="section-label">Sobre</p>
+        <p>
+          Profissional de <strong>Atendimento Publicitário</strong> com 3 anos de experiência em agência,
+          atuando como elo entre o cliente e a equipe criativa em campanhas de <strong>mídia online e offline</strong>.
+          Experiência com clientes de diferentes segmentos — incluindo instituições públicas de porte nacional
+          como o <strong>Sebrae</strong> — e passagem por veículo de comunicação, o que me proporcionou uma visão
+          ampla do mercado publicitário. Destaco-me pela <strong>organização</strong>, acompanhamento rigoroso de
+          briefings e gestão de aprovações, garantindo que cada entrega chegue ao cliente com qualidade e no prazo.
+        </p>
+      </section>
+
+      <!-- EXPERIÊNCIA -->
+      <section class="section">
+        <p class="section-label">Experiência profissional</p>
+
+        <div class="job">
+          <div class="job-header">
+            <h2 class="job-title">Atendimento Publicitário</h2>
+            <span class="job-period">2022 · Presente</span>
+          </div>
+          <p class="job-company">Agência Digital Comunicação · Manaus, AM · Mídia ON e OFF</p>
+          <ul class="job-list">
+            <li>Gestão do relacionamento com clientes dos segmentos público, gráfica, educação e audiovisual</li>
+            <li>Acompanhamento de briefings do início à entrega, garantindo alinhamento entre cliente e equipe criativa</li>
+            <li>Gestão de aprovações de peças em campanhas de mídia ON e OFF</li>
+            <li>Participação em 2 campanhas de eventos do Sebrae com prazo reduzido e meta de público atingida</li>
+            <li>Clientes atendidos: Sebrae Tocantins, Sebrae Roraima, Gráfica Xpress, Toré Filmes</li>
+          </ul>
+          <div class="job-tags">
+            <span class="tag">Gestão de Clientes</span>
+            <span class="tag">Briefing</span>
+            <span class="tag">Mídia ON</span>
+            <span class="tag">Mídia OFF</span>
+            <span class="tag">Aprovações</span>
+            <span class="tag">Cliente Público</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h2 class="job-title">Social Media</h2>
+            <span class="job-period">Aprox. 1 ano</span>
+          </div>
+          <p class="job-company">Rede Onda Digital · Manaus, AM · Rádio, TV e Portal de Notícias</p>
+          <ul class="job-list">
+            <li>Gestão das redes sociais do portal, incluindo postagem e distribuição de notícias</li>
+            <li>Atuação integrada entre comunicação digital e jornalismo</li>
+          </ul>
+          <div class="job-tags">
+            <span class="tag">Social Media</span>
+            <span class="tag">Conteúdo Digital</span>
+            <span class="tag">Portal de Notícias</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FORMAÇÃO -->
+      <section class="section">
+        <p class="section-label">Formação</p>
+        <div class="job">
+          <div class="job-header">
+            <h2 class="job-title" style="font-size:15px;">Ensino Médio Completo</h2>
+          </div>
+        </div>
+        <div class="job" style="margin-top:14px;">
+          <div class="job-header">
+            <h2 class="job-title" style="font-size:15px;">Marketing Digital</h2>
+          </div>
+          <p class="job-company" style="margin-bottom:0;">Curso de Extensão</p>
+        </div>
+        <div class="job" style="margin-top:14px; margin-bottom:0;">
+          <div class="job-header">
+            <h2 class="job-title" style="font-size:15px;">Publicidade</h2>
+          </div>
+          <p class="job-company" style="margin-bottom:0;">Curso de Extensão</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside>
+
+      <!-- HABILIDADES -->
+      <div class="sidebar-section">
+        <p class="section-label">Habilidades</p>
+        <ul class="skill-list">
+          <li class="skill-item">Gestão de relacionamento com cliente</li>
+          <li class="skill-item">Acompanhamento de briefing</li>
+          <li class="skill-item">Gestão de aprovações de peças</li>
+          <li class="skill-item">Intermediação cliente / equipe criativa</li>
+          <li class="skill-item">Comunicação interpessoal e escrita</li>
+          <li class="skill-item">Organização e gestão de prazos</li>
+          <li class="skill-item">Conhecimento em mídia ON e OFF</li>
+        </ul>
+      </div>
+
+      <!-- FERRAMENTAS -->
+      <div class="sidebar-section">
+        <p class="section-label">Ferramentas</p>
+        <div class="tool-grid">
+          <span class="tool-badge">Trello</span>
+          <span class="tool-badge">Asana</span>
+          <span class="tool-badge">Google Drive</span>
+          <span class="tool-badge">Excel</span>
+          <span class="tool-badge">Meta Ads</span>
+        </div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="sidebar-section">
+        <p class="section-label">Idiomas</p>
+        <ul class="skill-list">
+          <li class="skill-item">Português — nativo</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Currículo · 2026 <span class="footer-dot"></span> Elane Costa de Freitas</p>
+    <p style="color: var(--accent); font-size: 12px;">Manaus, AM · Disponível para novos desafios</p>
+  </footer>
+
+</div>
+</body>
+</html>
